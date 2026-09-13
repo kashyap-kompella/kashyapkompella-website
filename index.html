@@ -5,125 +5,494 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Kashyap Kompella</title>
-  <meta name="description" content="Personal website of Kashyap Kompella" />
+
+  <meta
+    name="description"
+    content="Personal website of Kashyap Kompella — writing, ideas, and projects."
+  />
 
   <style>
+    :root {
+      --background: #ffffff;
+      --text: #111111;
+      --muted: #777777;
+      --border: #e8e8e8;
+      --link: #111111;
+    }
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f7f7;
-      color: #222;
+      background: var(--background);
+      color: var(--text);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 16px;
       line-height: 1.6;
     }
 
-    header {
-      background: #111;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin-top: 10px;
-      color: #ccc;
-    }
-
-    nav {
-      background: white;
-      padding: 15px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: #222;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
+    a {
+      color: var(--link);
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+    a:hover {
+      opacity: 0.6;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 28px;
+    }
+
+    header {
+      margin-bottom: 90px;
+    }
+
+    .name {
+      margin: 0 0 28px 0;
+
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: -0.8px;
+    }
+
+    .intro {
+      max-width: 620px;
+      margin: 0;
+
+      font-size: 20px;
+      line-height: 1.55;
+      letter-spacing: -0.2px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+
+      margin-top: 28px;
+      font-size: 15px;
     }
 
     section {
-      background: white;
-      margin-bottom: 25px;
-      padding: 30px;
-      border-radius: 8px;
+      margin-bottom: 90px;
     }
 
-    h2 {
-      margin-top: 0;
+    .section-title {
+      margin: 0 0 30px 0;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace;
+
+      font-size: 13px;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      color: var(--muted);
     }
 
-    a {
-      color: #0a66c2;
+    .post {
+      display: grid;
+      grid-template-columns: 125px 1fr;
+      gap: 20px;
+
+      padding: 18px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .post:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-date {
+      margin: 2px 0 0;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace;
+
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .post-title {
+      margin: 0;
+
+      font-size: 17px;
+      font-weight: 450;
+      line-height: 1.45;
+    }
+
+    .post-title a {
+      text-decoration: none;
+    }
+
+    .post-title a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .view-all {
+      margin-top: 24px;
+      font-size: 14px;
+    }
+
+    .about {
+      max-width: 620px;
+    }
+
+    .about p {
+      margin: 0 0 18px 0;
     }
 
     footer {
-      text-align: center;
-      padding: 30px;
-      color: #666;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace;
+
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .loading {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 50px 22px;
+      }
+
+      header {
+        margin-bottom: 70px;
+      }
+
+      section {
+        margin-bottom: 70px;
+      }
+
+      .name {
+        font-size: 27px;
+      }
+
+      .intro {
+        font-size: 18px;
+      }
+
+      .post {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .post-date {
+        order: 2;
+      }
+
+      .post-title {
+        order: 1;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Kashyap Kompella</h1>
-    <p>Welcome to my website</p>
-  </header>
+  <main class="container">
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <!-- INTRO -->
 
-  <main>
+    <header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hello! I'm Kashyap.
+      <h1 class="name">
+        Kashyap Kompella
+      </h1>
+
+      <p class="intro">
+        Writing about random stuff while I trick my brain into a relaxed state. Views are my own.
       </p>
-    </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Connect with me on
+      <div class="links">
+
         <a
           href="https://www.linkedin.com/in/kashyap-kompella/"
           target="_blank"
           rel="noopener noreferrer"
         >
           LinkedIn
-        </a>.
+        </a>
+
+        <a
+          href="https://behindthebaseline.substack.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Behind the Baseline
+        </a>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- THOUGHTS -->
+
+    <section id="thoughts">
+
+      <h2 class="section-title">
+        Thoughts
+      </h2>
+
+      <div id="substack-posts">
+
+        <p class="loading">
+          Loading latest posts...
+        </p>
+
+      </div>
+
+      <p class="view-all">
+
+        <a
+          href="https://behindthebaseline.substack.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View all writing →
+        </a>
+
       </p>
+
     </section>
+
+
+
+    <!-- ABOUT -->
+
+    <section>
+
+      <h2 class="section-title">
+        About
+      </h2>
+
+      <div class="about">
+
+        <p>
+          I'm Kashyap. Software Engineer turned Product Manager
+        </p>
+
+        <p>
+          This is my corner of the internet for ideas,
+          observations, and things I'm thinking about.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      © 2026 Kashyap Kompella
+
+    </footer>
 
   </main>
 
-  <footer>
-    &copy; 2026 Kashyap Kompella
-  </footer>
+
+
+  <!-- SUBSTACK RSS -->
+
+  <script>
+
+    async function loadSubstackPosts() {
+
+      const container =
+        document.getElementById("substack-posts");
+
+      const feedUrl =
+        "https://behindthebaseline.substack.com/feed";
+
+      const apiUrl =
+        "https://api.rss2json.com/v1/api.json?rss_url=" +
+        encodeURIComponent(feedUrl);
+
+
+      try {
+
+        const response =
+          await fetch(apiUrl);
+
+        if (!response.ok) {
+          throw new Error("Unable to load RSS feed");
+        }
+
+
+        const data =
+          await response.json();
+
+
+        if (!data.items || data.items.length === 0) {
+          throw new Error("No posts returned");
+        }
+
+
+        container.innerHTML = "";
+
+
+        const posts =
+          data.items.slice(0, 7);
+
+
+        posts.forEach(post => {
+
+          const row =
+            document.createElement("article");
+
+          row.className = "post";
+
+
+          const date =
+            document.createElement("p");
+
+          date.className = "post-date";
+
+
+          const postDate =
+            new Date(post.pubDate);
+
+
+          date.textContent =
+            postDate.toLocaleDateString(
+              "en-US",
+              {
+                month: "short",
+                day: "numeric",
+                year: "numeric"
+              }
+            );
+
+
+          const title =
+            document.createElement("h3");
+
+          title.className = "post-title";
+
+
+          const link =
+            document.createElement("a");
+
+          link.href = post.link;
+
+          link.target = "_blank";
+
+          link.rel =
+            "noopener noreferrer";
+
+          link.textContent =
+            post.title;
+
+
+          title.appendChild(link);
+
+          row.appendChild(date);
+
+          row.appendChild(title);
+
+          container.appendChild(row);
+
+        });
+
+
+      } catch (error) {
+
+        console.error(
+          "Substack feed error:",
+          error
+        );
+
+
+        container.innerHTML = "";
+
+
+        const fallback =
+          document.createElement("p");
+
+        fallback.className =
+          "loading";
+
+
+        fallback.append(
+          "Latest posts are available on "
+        );
+
+
+        const link =
+          document.createElement("a");
+
+        link.href =
+          "https://behindthebaseline.substack.com/";
+
+        link.target =
+          "_blank";
+
+        link.rel =
+          "noopener noreferrer";
+
+        link.textContent =
+          "Behind the Baseline";
+
+
+        fallback.appendChild(link);
+
+        fallback.append(".");
+
+
+        container.appendChild(fallback);
+
+      }
+
+    }
+
+
+    loadSubstackPosts();
+
+  </script>
 
 </body>
 </html>
